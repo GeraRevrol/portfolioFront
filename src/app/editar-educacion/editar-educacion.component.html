@@ -1,0 +1,39 @@
+<p>formulario para editar!</p>
+<div *ngIf="educacion">
+    <form (ngSubmit)= "onSubmit()" >
+      <div>
+          <label>titulo</label>
+          <input type="text" 
+          id = "titulo"
+          [(ngModel)] = "educacion.titulo"
+          name = "titulo">
+      </div>
+      <div>
+          <label>institucion</label>
+          <input type="text" 
+          id = "institucion"
+          [(ngModel)] = "educacion.institucion"
+          name = "institucion">
+         
+      </div>
+      <div>
+          <label>año ingreso</label>
+          <input type="text" 
+          id = "anioingreso"
+          [(ngModel)] = "educacion.anioingreso"
+          name = "anioingreso">
+      </div>
+      <div>
+          <label>año egreso</label>
+           <input type="text" 
+          id = "anioegreso"
+          [(ngModel)] = "educacion.anioegreso"
+          name = "anioegreso">
+      </div>
+  
+      
+      <button class="btn waves-effect waves-light" type="submit" name="action">Guardar cambio
+          <i class="material-icons right">send</i>
+        </button>
+    </form>  
+  </div>

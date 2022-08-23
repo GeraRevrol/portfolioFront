@@ -1,6 +1,9 @@
+<div class="container" *ngIf="educacion">
 <div class="col s12 m8">
   <ul class="collection with-header">
-    <li class="collection-header"><h4>Educación</h4></li>
+    <li class="collection-header"><h4>Educación</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-educacion" type="submit" name="action">Agregar
+        <i class="material-icons right">send</i>
+      </button></li>
     <div *ngFor="let educacion of educacion">
       <li class="collection-item">Titulo: {{ educacion.titulo }}</li>
       <li class="collection-item">Institucion: {{ educacion.institucion }}</li>
@@ -9,6 +12,15 @@
         {{ educacion.anioegreso }}
       </li>
       <li><br></li>
+      
+      <button class="btn waves-effect waves-light" routerLink="/editar-educacion/{{educacion.idEducacion}}" type="submit" name="action">Editar
+        <i class="material-icons right">send</i>
+      </button>
+      <button class="btn waves-effect waves-light" (click)="borrarEducacion(educacion.idEducacion)" type="submit" name="action">Borrar
+        <i class="material-icons right">send</i>
+      </button>
+
     </div>
   </ul>
+</div>
 </div>

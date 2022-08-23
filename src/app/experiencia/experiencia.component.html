@@ -1,0 +1,26 @@
+<div class="container" *ngIf="experiencia">
+    <div class="col s12 m8">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Experiencia</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-experiencia" type="submit" name="action">Agregar
+            <i class="material-icons right">add</i>
+          </button></li>
+        <div *ngFor="let experiencia of experiencia">
+          <li class="collection-item">Titulo: {{ experiencia.cargo }}</li>
+          <li class="collection-item">Institucion: {{ experiencia.institucion }}</li>
+          <li class="collection-item">
+            Año de ingreso: {{ experiencia.anioingreso }} - Año de egreso:
+            {{ experiencia.anioegreso }}
+          </li>
+          <li><br></li>
+          
+          <button class="btn waves-effect waves-light" routerLink="/editar-experiencia/{{experiencia.idExperiencia}}" type="submit" name="action">Editar
+            <i class="material-icons right">create</i>
+          </button>
+          <button class="btn waves-effect waves-light" (click)="borrarExperiencia(experiencia.idExperiencia)" type="submit" name="action">Borrar
+            <i class="material-icons right">delete</i>
+          </button>
+    
+        </div>
+      </ul>
+    </div>
+    </div>

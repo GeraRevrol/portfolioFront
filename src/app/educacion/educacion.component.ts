@@ -2,6 +2,7 @@ import { Educacion } from '../educacion';
 import { Component, OnInit } from '@angular/core';
 import { EducacionService } from '../educacion.service';
 import { trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-educacion',
@@ -12,16 +13,26 @@ export class EducacionComponent implements OnInit {
 
 educacion:Educacion[];
 
-  constructor(private EducacionService:EducacionService) { }
+  constructor(private EducacionService:EducacionService, private router:Router) { }
 
   ngOnInit(): void {
     this.getEducacion();
   }
-
+  
   private getEducacion(){
-    this.EducacionService.verEducacion().subscribe(dato =>{
-      this.educacion = dato;
+    this.EducacionService.verEducacion().subscribe(data =>{
+      this.educacion = data;
     });
   }
 
+  borrarEducacion(idEducacion?: number){
+    if(idEducacion != undefined){
+      this.EducacionService.borrarEducacion(idEducacion).subscribe( data => {
+        this.getEducacion();
+      },error => {
+        
+       }
+      )
+    }
+  }
 }

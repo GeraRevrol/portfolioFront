@@ -18,9 +18,9 @@ export class AgregarEducacionComponent implements OnInit {
   }
 
   postEducacion() {
-    this.educacionService.agregarEducacion(this.educacion).subscribe(dato => {
+    this.educacionService.agregarEducacion(this.educacion).subscribe(data => {
       this.irAEducacion();
-      console.log(dato);      
+      console.log(data);      
 
     },error => console.log(error));
   }

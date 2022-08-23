@@ -1,7 +1,8 @@
+<div class="container" *ngIf="persona">
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
-          <img width="300px" src="{{persona[0].urlFoto}}"/>
+          <img width="300px"  src="{{persona[0].urlFoto}}"/>
           <span class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}</span>
         </div>
         <div class="card-content">
@@ -16,3 +17,7 @@
         </div>
       </div>
     </div>
+<app-educacion></app-educacion>
+<app-experiencia></app-experiencia>
+
+</div>

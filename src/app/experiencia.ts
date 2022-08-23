@@ -1,7 +1,7 @@
-export class Educacion {
+export class Experiencia {
 
-    idEducacion:number;
-    titulo:string;
+    idExperiencia:number;
+    cargo:string;
     institucion:string;
     anioingreso:string;
     anioegreso:string;
