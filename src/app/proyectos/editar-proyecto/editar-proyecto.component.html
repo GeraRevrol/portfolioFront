@@ -1,0 +1,31 @@
+<div *ngIf="proyectos">
+    <form (ngSubmit)= "onSubmit()">
+      <div>
+          <label>Nombre</label>
+          <input type="text" 
+          id = "nombre"
+          [(ngModel)] = "proyectos.nombre"
+          name = "nombre">
+      </div>
+      <div>
+          <label>descripcion</label>
+          <input type="text" 
+          id = "descripcion"
+          [(ngModel)] = "proyectos.descripcion"
+          name = "descripcion">
+         
+      </div>
+      <div>
+          <label>url</label>
+          <input type="text" 
+          id = "url"
+          [(ngModel)] = "proyectos.url"
+          name = "url">
+      </div>
+
+      
+      <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
+          <i class="material-icons right">send</i>
+        </button>
+    </form>  
+</div>

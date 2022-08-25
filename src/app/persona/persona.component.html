@@ -1,5 +1,5 @@
-<div class="container" *ngIf="persona">
-    <div class="col s12 m4">
+<div *ngIf="persona">
+    <div class="col s4">
       <div class="card">
         <div class="card-image">
           <img width="300px"  src="{{persona[0].urlFoto}}"/>
@@ -17,7 +17,8 @@
         </div>
       </div>
     </div>
+    
 <app-educacion></app-educacion>
 <app-experiencia></app-experiencia>
-
+<app-proyectos></app-proyectos>
 </div>

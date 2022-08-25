@@ -11,6 +11,9 @@ import { EditarEducacionComponent } from './editar-educacion/editar-educacion.co
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { AgregarExperienciaComponent } from './experiencia/agregar-experiencia/agregar-experiencia.component';
 import { EditarExperienciaComponent } from './experiencia/editar-experiencia/editar-experiencia.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
+import { AgregarProyectoComponent } from './proyectos/agregar-proyecto/agregar-proyecto.component';
+import { EditarProyectoComponent } from './proyectos/editar-proyecto/editar-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { EditarExperienciaComponent } from './experiencia/editar-experiencia/edi
     ExperienciaComponent,
     AgregarExperienciaComponent,
     EditarExperienciaComponent,
+    ProyectosComponent,
+    AgregarProyectoComponent,
+    EditarProyectoComponent,
     ],
   imports: [
     BrowserModule,

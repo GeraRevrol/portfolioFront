@@ -7,6 +7,9 @@ import { AgregarExperienciaComponent } from './experiencia/agregar-experiencia/a
 import { EditarExperienciaComponent } from './experiencia/editar-experiencia/editar-experiencia.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { PersonaComponent } from './persona/persona.component';
+import { AgregarProyectoComponent } from './proyectos/agregar-proyecto/agregar-proyecto.component';
+import { EditarProyectoComponent } from './proyectos/editar-proyecto/editar-proyecto.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 const routes: Routes = [
 {path : 'persona',component:PersonaComponent},
@@ -16,6 +19,9 @@ const routes: Routes = [
 {path : 'experiencia',component:ExperienciaComponent},
 {path : 'agregar-experiencia',component:AgregarExperienciaComponent},
 {path : 'editar-experiencia/:idExperiencia',component:EditarExperienciaComponent},
+{path : 'proyectos',component:ProyectosComponent},
+{path : 'agregar-proyectos',component:AgregarProyectoComponent},
+{path : 'editar-proyectos/:idProyectos',component:EditarProyectoComponent},
 {path:'',redirectTo:'persona',pathMatch:'full'}
 
 ];
