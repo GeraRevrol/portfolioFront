@@ -1,0 +1,21 @@
+<div class="container" *ngIf="skills">
+    <div class="col s6">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Skills</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-skills" type="submit" name="action">Agregar
+            <i class="material-icons right">send</i>
+          </button></li>
+        <div *ngFor="let skills of skills">
+          <li class="collection-item">Titulo: {{ skills.habilidades}}</li>
+          <li><br></li>
+          
+          <button class="btn waves-effect waves-light" routerLink="/editar-skills/{{skills.idSkills}}" type="submit" name="action">Editar
+            <i class="material-icons right">create</i>
+          </button>
+          <button class="btn waves-effect waves-light" (click)="borrarSkills(skills.idSkills)" type="submit" name="action">Borrar
+            <i class="material-icons right">delete</i>
+          </button>
+    
+        </div>
+      </ul>
+    </div>
+    </div>

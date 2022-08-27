@@ -1,0 +1,14 @@
+<div *ngIf="skills">
+    <form (ngSubmit)= "onSubmit()">
+      <div>
+          <label>habilidad</label>
+          <input type="text" 
+          id = "habilidad"
+          [(ngModel)] = "skills.habilidades"
+          name = "habilidad">
+      </div>
+      <button style="width: 10px;" class="btn waves-effect waves-light" type="submit" name="action">Guardar
+          <i class="material-icons right">send</i>
+        </button>
+    </form>  
+  </div>

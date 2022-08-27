@@ -1,7 +1,6 @@
 import { Educacion } from '../educacion';
 import { Component, OnInit } from '@angular/core';
 import { EducacionService } from '../educacion.service';
-import { trigger } from '@angular/animations';
 import { Router } from '@angular/router';
 
 @Component({

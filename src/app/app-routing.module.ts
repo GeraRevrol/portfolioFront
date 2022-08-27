@@ -10,6 +10,9 @@ import { PersonaComponent } from './persona/persona.component';
 import { AgregarProyectoComponent } from './proyectos/agregar-proyecto/agregar-proyecto.component';
 import { EditarProyectoComponent } from './proyectos/editar-proyecto/editar-proyecto.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
+import { AgregarSkillsComponent } from './skills/agregar-skills/agregar-skills.component';
+import { EditarSkillsComponent } from './skills/editar-skills/editar-skills.component';
+import { SkillsComponent } from './skills/skills.component';
 
 const routes: Routes = [
 {path : 'persona',component:PersonaComponent},
@@ -22,8 +25,10 @@ const routes: Routes = [
 {path : 'proyectos',component:ProyectosComponent},
 {path : 'agregar-proyectos',component:AgregarProyectoComponent},
 {path : 'editar-proyectos/:idProyectos',component:EditarProyectoComponent},
+{path : 'skills',component:SkillsComponent},
+{path : 'agregar-skills',component:AgregarSkillsComponent},
+{path : 'editar-skills/:idSkills',component:EditarSkillsComponent},
 {path:'',redirectTo:'persona',pathMatch:'full'}
-
 ];
 
 @NgModule({
