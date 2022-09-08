@@ -1,25 +1,34 @@
 <div *ngIf="persona">
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img width="300px"  src="{{persona[0].urlFoto}}"/>
-          <span class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}</span>
-        </div>
-        <div class="card-content">
-            <p>Nombre: {{persona[0].nombre}}</p>
-            <p>Apellido: {{persona[0].apellido}}</p>
-            <p>Domicilio: {{persona[0].domicilio}}</p>
-            <p>Fecha de Nacimiento: {{persona[0].fechaNac}}</p>
-            <p>Telefono: {{persona[0].telefono}}</p>
-            <p>Correo: {{persona[0].correo}}</p>
-            <p>Sobre mi: {{persona[0].sobreMi}}</p>
-            <p>Descripcion: {{persona[0].descripcion}}</p>
-        </div>
+  <div>
+  <button type="button" class="btn waves-effect waves-light" (click)="login()" *ngIf="!isLogged">ingresar
+    <i class="material-icons right">person</i>
+  </button>
+  <button type="button" class="btn waves-effect waves-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar Sesion
+    <i class="material-icons right">person</i>
+  </button>
+</div>
+  <div class="col s4">
+    <div class="card">
+      <div class="card-image">
+        <img width="300px" src="{{persona[0].urlFoto}}" />
+        <span class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}</span>
+      </div>
+      <div class="card-content">
+        <p>Nombre: {{persona[0].nombre}}</p>
+        <p>Apellido: {{persona[0].apellido}}</p>
+        <p>Domicilio: {{persona[0].domicilio}}</p>
+        <p>Fecha de Nacimiento: {{persona[0].fechaNac}}</p>
+        <p>Telefono: {{persona[0].telefono}}</p>
+        <p>Correo: {{persona[0].correo}}</p>
+        <p>Sobre mi: {{persona[0].sobreMi}}</p>
+        <p>Descripcion: {{persona[0].descripcion}}</p>
       </div>
     </div>
-    
-<app-educacion></app-educacion>
-<app-experiencia></app-experiencia>
-<app-proyectos></app-proyectos>
-<app-skills></app-skills>
+  </div>
+
+  <app-educacion></app-educacion>
+  <app-experiencia></app-experiencia>
+  <app-proyectos></app-proyectos>
+  <app-skills></app-skills>
+
 </div>

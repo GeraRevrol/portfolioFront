@@ -17,6 +17,8 @@ import { EditarProyectoComponent } from './proyectos/editar-proyecto/editar-proy
 import { SkillsComponent } from './skills/skills.component';
 import { EditarSkillsComponent } from './skills/editar-skills/editar-skills.component';
 import { AgregarSkillsComponent } from './skills/agregar-skills/agregar-skills.component';
+import { LoginComponent } from './login/login.component';
+import { interceptorProvider } from './interceptor-service';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { AgregarSkillsComponent } from './skills/agregar-skills/agregar-skills.c
     SkillsComponent,
     EditarSkillsComponent,
     AgregarSkillsComponent,
+    LoginComponent,
     ],
   imports: [
     BrowserModule,
@@ -41,7 +44,9 @@ import { AgregarSkillsComponent } from './skills/agregar-skills/agregar-skills.c
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

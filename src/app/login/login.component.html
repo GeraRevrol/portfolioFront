@@ -1,0 +1,24 @@
+<p>login works!</p>
+<form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+  <div class="col s6 m6">
+    <div class="container">
+      <i class="material-icons right">account_circle</i>
+
+
+      <div>
+        <label for="nombreUsuario"><b>Nombre Usuario</b></label>
+        <input type="text" id="nombreUsuario" placeholder="Ingresa Nombre de Usuario" name="nombreUsuario"
+          [(ngModel)]="nombreUsuario" required />
+      </div>
+      <label for="password"><b>Contraseña</b></label>
+      <input type="password" id="password" placeholder="Ingresa Contraseña" name="password" [(ngModel)]="password"
+        required />
+
+     
+      <button class="btn waves-effect waves-light" type="submit" name="action">Login
+        <i class="material-icons right">chevron_right</i>
+      </button>
+    </div>
+  </div>
+
+</form>

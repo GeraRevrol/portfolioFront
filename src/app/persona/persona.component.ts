@@ -1,6 +1,8 @@
 import { Persona } from '../persona';
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from '../persona.service';
+import { Router } from '@angular/router';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-persona',
@@ -9,17 +11,34 @@ import { PersonaService } from '../persona.service';
 })
 export class PersonaComponent implements OnInit {
 
-  persona:Persona[];
+  isLogged = false;
 
-  constructor(private PersonaService:PersonaService) { }
+  persona: Persona[];
+
+  constructor(private PersonaService: PersonaService, private router: Router, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.getPersona();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
-  private getPersona(){
-    this.PersonaService.verPersona().subscribe(dato =>{
+  private getPersona() {
+    this.PersonaService.verPersona().subscribe(dato => {
       this.persona = dato;
     });
   }
+
+  onLogOut(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
+
+  login() {
+    this.router.navigate(['/login'])
+  }
+
 }
