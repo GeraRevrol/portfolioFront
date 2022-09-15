@@ -21,43 +21,22 @@
   </div>
 </div> -->
 
-<div class="container-fluid" style="padding-top:200px;" *ngIf="persona">
-  <div class="col-">
-    <div class="row g-1">
-      <div>
-        <div class="d-flex justify-content-center">
-          <img src="{{persona[0].urlFoto}}" class="img-fluid rounded-circle"
-            style="background-color: #6727dd;width: 250px;" alt="Foto perfil">
-          <div class="text-center">
-            <h5>{{persona[0].nombre}} {{persona[0].apellido}}</h5>
-            <p>Domicilio: {{persona[0].domicilio}}
-              Fecha de Nacimiento: {{persona[0].fechaNac}}
-              Telefono: {{persona[0].telefono}}
-              Correo: {{persona[0].correo}}
-              Sobre mi: {{persona[0].sobreMi}}
-              Descripcion: {{persona[0].descripcion}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="card mb-3" style="max-width: 540px;">
+<div class="container-fluid d-flex justify-content-center" style="padding-top:200px;">
+  <div class="card mb-12 border border-0" style="max-width: 800px; " *ngIf="persona">
     <div class="row g-0">
-      <div class="col-md-4">
-        <img src="{{persona[0].urlFoto}}" class="img-fluid rounded-start" style="background-color: #6727dd;" alt="foto perfil">
+      <div class="col-md-4 col-sm-12">
+        <img src="{{persona[0].urlFoto}}" class="img-fluid rounded-circle align-center"
+          style="background-color: #6727dd;" alt="foto perfil">
       </div>
       <div class="col-md-8">
-        <div class="card-body">
+        <div class="card-body text-center">
           <h3 class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}</h3>
-          <h5 class="card-text">{{persona[0].nombre}} {{persona[0].apellido}}</h5>
+          <h5 class="card-title">{{persona[0].descripcion}}</h5>
           <p class="card-text">Domicilio: {{persona[0].domicilio}}
             Fecha de Nacimiento: {{persona[0].fechaNac}}
             Telefono: {{persona[0].telefono}}
             Correo: {{persona[0].correo}}
-            Sobre mi: {{persona[0].sobreMi}}
-            Descripcion: {{persona[0].descripcion}}</p>
+            Sobre mi: {{persona[0].sobreMi}}</p>
         </div>
       </div>
     </div>
