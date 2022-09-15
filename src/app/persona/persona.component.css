@@ -4,20 +4,6 @@
     border-radius: 20px;
 }
 
-.home__blob{
-    width: 200px;
-    fill: #6727dd;
-  }
-  
-  .home__blob-img{
-    width: 170px;
-  }
-
-  .home__img{
-    order: 1;
-    justify-self: center;
-  }
-
   .bordeBlob {
     border-radius: 50px 50px 150px 150px;
   }
