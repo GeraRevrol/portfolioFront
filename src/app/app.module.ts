@@ -19,6 +19,8 @@ import { EditarSkillsComponent } from './skills/editar-skills/editar-skills.comp
 import { AgregarSkillsComponent } from './skills/agregar-skills/agregar-skills.component';
 import { LoginComponent } from './login/login.component';
 import { interceptorProvider } from './interceptor-service';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { interceptorProvider } from './interceptor-service';
     EditarSkillsComponent,
     AgregarSkillsComponent,
     LoginComponent,
+    HeaderComponent,
+    HomeComponent,
     ],
   imports: [
     BrowserModule,

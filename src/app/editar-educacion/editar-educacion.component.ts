@@ -31,7 +31,7 @@ export class EditarEducacionComponent implements OnInit {
     this.educacionService.editarEducacion(idEducacion, this.educacion).subscribe(data => {
       this.irAEducacion();
       },error =>{
-        alert("Error al modificar educacion");
+        alert("Error al editar educacion, Revisá si contas con los accesos requeridos");
         this.irAEducacion();
       }
     )

@@ -6,6 +6,7 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { AgregarExperienciaComponent } from './experiencia/agregar-experiencia/agregar-experiencia.component';
 import { EditarExperienciaComponent } from './experiencia/editar-experiencia/editar-experiencia.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PersonaComponent } from './persona/persona.component';
 import { AgregarProyectoComponent } from './proyectos/agregar-proyecto/agregar-proyecto.component';
@@ -30,7 +31,7 @@ const routes: Routes = [
 {path : 'agregar-skills',component:AgregarSkillsComponent},
 {path : 'editar-skills/:idSkills',component:EditarSkillsComponent},
 {path : 'login',component:LoginComponent},
-{path:'',redirectTo:'persona',pathMatch:'full'}
+{path:'',component:HomeComponent, pathMatch:'full'}
 ];
 
 @NgModule({

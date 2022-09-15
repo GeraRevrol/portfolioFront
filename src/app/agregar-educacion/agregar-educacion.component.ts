@@ -10,26 +10,30 @@ import { EducacionService } from '../educacion.service';
 })
 export class AgregarEducacionComponent implements OnInit {
 
-  educacion : Educacion = new Educacion();
-  constructor(private educacionService:EducacionService,private router:Router){ }
+  educacion: Educacion = new Educacion();
+  constructor(private educacionService: EducacionService, private router: Router) { }
 
   ngOnInit(): void {
-    
+
   }
 
   postEducacion() {
     this.educacionService.agregarEducacion(this.educacion).subscribe(data => {
       this.irAEducacion();
-      console.log(data);      
+      console.log(data);
 
-    },error => console.log(error));
+    }, err => {
+      alert ("no fue posible agregar educacion, Revisá si contas con los accesos requeridos");
+      this.irAEducacion();
+    }
+    )
   }
 
-  irAEducacion(){
+  irAEducacion() {
     this.router.navigate(['/educacion']);
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.educacion);
     this.postEducacion();
   }

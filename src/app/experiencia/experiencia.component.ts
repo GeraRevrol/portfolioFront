@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from '../experiencia';
 import { ExperienciaService } from '../experiencia.service';
+import { TokenService } from '../token.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -12,10 +13,16 @@ export class ExperienciaComponent implements OnInit {
 
 experiencia:Experiencia[];
 
-  constructor(private ExperienciaService:ExperienciaService, private router:Router) { }
+  constructor(private ExperienciaService:ExperienciaService, private router:Router, private tokenService: TokenService) { }
+  isLogged = false;
 
   ngOnInit(): void {
     this.getExperiencia();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
   }
 
   private getExperiencia(){

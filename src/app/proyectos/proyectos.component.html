@@ -1,7 +1,7 @@
 <div *ngIf="proyectos">
     <div class="col s6 m6">
       <ul class="collection with-header">
-        <li class="collection-header"><h4>Proyectos</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-proyectos" type="submit" name="action">Agregar
+        <li class="collection-header"><h4>Proyectos</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-proyectos" *ngIf="isLogged" type="submit" name="action">Agregar
             <i class="material-icons right">send</i>
           </button></li>
         <div *ngFor="let proyectos of proyectos">
@@ -12,10 +12,10 @@
           </li>
           <li><br></li>
           
-          <button class="btn waves-effect waves-light" routerLink="/editar-proyectos/{{proyectos.idProyectos}}" type="submit" name="action">Editar
+          <button class="btn waves-effect waves-light" routerLink="/editar-proyectos/{{proyectos.idProyectos}}" *ngIf="isLogged" type="submit" name="action">Editar
             <i class="material-icons right">send</i>
           </button>
-          <button class="btn waves-effect waves-light" (click)="borrarProyectos(proyectos.idProyectos)" type="submit" name="action">Borrar
+          <button class="btn waves-effect waves-light" (click)="borrarProyectos(proyectos.idProyectos)" *ngIf="isLogged" type="submit" name="action">Borrar
             <i class="material-icons right">send</i>
           </button>
     
