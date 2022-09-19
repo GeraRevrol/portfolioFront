@@ -19,6 +19,7 @@ export class EditarExperienciaComponent implements OnInit {
     const idExperiencia = this.activatedRouter.snapshot.params['idExperiencia'];
     this.experienciaService.verIdExperiencia(idExperiencia).subscribe( data => {
       this.experiencia = data;
+      this.openPopup();
       }, error =>{
        alert("Error al modificar experiencia");
        this.router.navigate(['']);
@@ -29,21 +30,33 @@ export class EditarExperienciaComponent implements OnInit {
   editarExperiencia(){
     const idExperiencia = this.activatedRouter.snapshot.params['idExperiencia'];
      this.experienciaService.editarExperiencia(idExperiencia, this.experiencia).subscribe(data => {
-      this.irAExperiencia();
+      this.irAHome();
      }, error =>{
         alert("Error al modificar experiencia");
-        this.irAExperiencia();
+        this.irAHome();
      }
    )
   }
 
-  irAExperiencia(){
-    this.router.navigate(['/experiencia']);
+  irAHome() {
+    this.router.navigate(['']);
   }
 
   onSubmit(){
     this.editarExperiencia();
     console.log(this.experiencia);
   }
+
+  displayStyle = "none";
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    this.irAHome();
+  }
+
 
 }

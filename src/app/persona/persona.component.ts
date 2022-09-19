@@ -41,4 +41,8 @@ export class PersonaComponent implements OnInit {
     this.router.navigate(['/login'])
   }
 
+  irAHome() {
+    this.router.navigate(['']);
+  }
+
 }

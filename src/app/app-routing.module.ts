@@ -8,6 +8,7 @@ import { EditarExperienciaComponent } from './experiencia/editar-experiencia/edi
 import { ExperienciaComponent } from './experiencia/experiencia.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.component';
 import { PersonaComponent } from './persona/persona.component';
 import { AgregarProyectoComponent } from './proyectos/agregar-proyecto/agregar-proyecto.component';
 import { EditarProyectoComponent } from './proyectos/editar-proyecto/editar-proyecto.component';
@@ -18,6 +19,7 @@ import { SkillsComponent } from './skills/skills.component';
 
 const routes: Routes = [
 {path : 'persona',component:PersonaComponent},
+{path : 'editar-persona/:idPersona',component:EditarPersonaComponent},
 {path : 'educacion',component:EducacionComponent},
 {path : 'agregar-educacion',component:AgregarEducacionComponent},
 {path : 'editar-educacion/:idEducacion',component:EditarEducacionComponent},

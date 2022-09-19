@@ -42,4 +42,8 @@ skills:Skills[];
     }
   }
 
+  irAHome() {
+    this.router.navigate(['']);
+  }
+
 }

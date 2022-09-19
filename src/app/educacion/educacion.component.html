@@ -1,26 +1,35 @@
-<div class="container" *ngIf="educacion">
-<div class="col s8">
-  <ul class="collection with-header">
-    <li class="collection-header"><h4>Educación</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-educacion" *ngIf="isLogged" type="submit" name="action">Agregar
-        <i class="material-icons right">send</i>
-      </button></li>
-    <div *ngFor="let educacion of educacion">
-      <li class="collection-item">Titulo: {{ educacion.titulo }}</li>
-      <li class="collection-item">Institucion: {{ educacion.institucion }}</li>
-      <li class="collection-item">
-        Año de ingreso: {{ educacion.anioingreso }} - Año de egreso:
-        {{ educacion.anioegreso }}
-      </li>
-      <li><br></li>
+<div class="container container-fluid" style="padding-top:100px; margin-bottom: 100px;" *ngIf="educacion">
+  <div class="row g-0">
+    <h1 class="text-center"><i class="uil uil-graduation-cap"></i> Educacion
+  <button class="btn btn-sm btn-outline-dark" routerLink="/agregar-educacion"  *ngIf="isLogged" type="submit" name="action">
+    <i class="uil uil-plus"></i>
+  </button></h1>
+    <table class="table text-center"> 
       
-      <button class="btn waves-effect waves-light" routerLink="/editar-educacion/{{educacion.idEducacion}}" *ngIf="isLogged" type="submit" name="action">Editar
-        <i class="material-icons right">send</i>
-      </button>
-      <button class="btn waves-effect waves-light" (click)="borrarEducacion(educacion.idEducacion)" *ngIf="isLogged" type="submit" name="action">Borrar
-        <i class="material-icons right">send</i>
-      </button>
-
-    </div>
-  </ul>
-</div>
+      <thead>
+        <tr>
+          <th scope="col">Cargo</th>
+          <th scope="col">Institucion</th>
+          <th scope="col">Año<br>Ingreso </th>
+          <th scope="col">Año<br>Engreso </th>                    
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <!-- division de grupo de tabla -->
+        <tr *ngFor="let educacion of educacion">
+          <!-- <th scope="row">{{ educacion.idEducacion }}</th> -->
+          <td>{{ educacion.titulo }}</td>
+          <td>{{ educacion.institucion }}</td>
+          <td>{{ educacion.anioingreso }}</td>
+          <td>{{ educacion.anioegreso }}</td>
+          <button class="btn btn-sm btn-outline-dark" routerLink="/editar-educacion/{{educacion.idEducacion}}"  *ngIf="isLogged" type="submit" name="action">
+            <i class="uil uil-edit-alt"></i>
+          </button>
+          <button class="btn btn-sm btn-outline-dark" (click)="borrarEducacion(educacion.idEducacion)"  *ngIf="isLogged" type="submit" name="action">
+            <i class="uil uil-trash-alt"></i>
+          </button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

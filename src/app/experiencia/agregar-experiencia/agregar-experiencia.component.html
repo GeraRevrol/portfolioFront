@@ -1,38 +1,41 @@
-<div>
-    <form (ngSubmit)= "onSubmit()">
-      <div>
-          <label>Cargo</label>
-          <input type="text" 
-          id = "cargo"
-          [(ngModel)] = "experiencia.cargo"
-          name = "Cargo">
+<app-home></app-home>
+  <div *ngIf="experiencia"
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="color: #4a11b6;">
+        <h4 class="modal-title">Agregar Experiencia</h4>
+        <button type="button" class="btn-close" 
+                (click)="closePopup()"></button>
       </div>
-      <div>
-          <label>institucion</label>
-          <input type="text" 
-          id = "institucion"
-          [(ngModel)] = "experiencia.institucion"
-          name = "institucion">
-         
+      <div class="modal-body">
+        <form (ngSubmit)= "onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Cargo</label>
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0 w-50" id="cargo" [(ngModel)] = "experiencia.cargo"
+            name = "cargo">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Institucion</label>
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="institucion" [(ngModel)] = "experiencia.institucion"
+            name = "institucion">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Año Ingreso</label>
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="anioingreso" [(ngModel)] = "experiencia.anioingreso"
+            name = "anioingreso">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Año Egreso</label>
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="anioegreso" [(ngModel)] = "experiencia.anioegreso"
+            name = "anioegreso">
+          </div>
+          <button type="submit" class="btn morado" data-bs-dismiss="modal">Submit</button>
+        </form>
       </div>
-      <div>
-          <label>año ingreso</label>
-          <input type="text" 
-          id = "anioingreso"
-          [(ngModel)] = "experiencia.anioingreso"
-          name = "anioingreso">
-      </div>
-      <div>
-          <label>año egreso</label>
-           <input type="text" 
-          id = "anioegreso"
-          [(ngModel)] = "experiencia.anioegreso"
-          name = "anioegreso">
-      </div>
-  
-      
-      <button class="btn waves-effect waves-light" type="submit" name="action">Guardar
-          <i class="material-icons right">send</i>
-        </button>
-    </form>  
+    </div>
   </div>
+</div>
