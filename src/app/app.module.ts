@@ -22,6 +22,7 @@ import { interceptorProvider } from './interceptor-service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.
     HeaderComponent,
     HomeComponent,
     EditarPersonaComponent,
+    FooterComponent,
     ],
   imports: [
     BrowserModule,

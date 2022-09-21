@@ -6,6 +6,7 @@ import { EducacionComponent } from './educacion/educacion.component';
 import { AgregarExperienciaComponent } from './experiencia/agregar-experiencia/agregar-experiencia.component';
 import { EditarExperienciaComponent } from './experiencia/editar-experiencia/editar-experiencia.component';
 import { ExperienciaComponent } from './experiencia/experiencia.component';
+import { GuardsGuard } from './guards.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.component';
@@ -18,20 +19,20 @@ import { EditarSkillsComponent } from './skills/editar-skills/editar-skills.comp
 import { SkillsComponent } from './skills/skills.component';
 
 const routes: Routes = [
-{path : 'persona',component:PersonaComponent},
-{path : 'editar-persona/:idPersona',component:EditarPersonaComponent},
-{path : 'educacion',component:EducacionComponent},
-{path : 'agregar-educacion',component:AgregarEducacionComponent},
-{path : 'editar-educacion/:idEducacion',component:EditarEducacionComponent},
-{path : 'experiencia',component:ExperienciaComponent},
-{path : 'agregar-experiencia',component:AgregarExperienciaComponent},
-{path : 'editar-experiencia/:idExperiencia',component:EditarExperienciaComponent},
-{path : 'proyectos',component:ProyectosComponent},
-{path : 'agregar-proyectos',component:AgregarProyectoComponent},
-{path : 'editar-proyectos/:idProyectos',component:EditarProyectoComponent},
-{path : 'skills',component:SkillsComponent},
-{path : 'agregar-skills',component:AgregarSkillsComponent},
-{path : 'editar-skills/:idSkills',component:EditarSkillsComponent},
+{path : 'persona',component:PersonaComponent, canActivate:[GuardsGuard]},
+{path : 'editar-persona/:idPersona',component:EditarPersonaComponent, canActivate:[GuardsGuard]},
+{path : 'educacion',component:EducacionComponent, canActivate:[GuardsGuard]},
+{path : 'agregar-educacion',component:AgregarEducacionComponent, canActivate:[GuardsGuard]},
+{path : 'editar-educacion/:idEducacion',component:EditarEducacionComponent, canActivate:[GuardsGuard]},
+{path : 'experiencia',component:ExperienciaComponent, canActivate:[GuardsGuard]},
+{path : 'agregar-experiencia',component:AgregarExperienciaComponent, canActivate:[GuardsGuard]},
+{path : 'editar-experiencia/:idExperiencia',component:EditarExperienciaComponent, canActivate:[GuardsGuard]},
+{path : 'proyectos',component:ProyectosComponent, canActivate:[GuardsGuard]},
+{path : 'agregar-proyectos',component:AgregarProyectoComponent, canActivate:[GuardsGuard]},
+{path : 'editar-proyectos/:idProyectos',component:EditarProyectoComponent, canActivate:[GuardsGuard]},
+{path : 'skills',component:SkillsComponent, canActivate:[GuardsGuard]},
+{path : 'agregar-skills',component:AgregarSkillsComponent, canActivate:[GuardsGuard]},
+{path : 'editar-skills/:idSkills',component:EditarSkillsComponent, canActivate:[GuardsGuard]},
 {path : 'login',component:LoginComponent},
 {path:'',component:HomeComponent, pathMatch:'full'}
 ];
