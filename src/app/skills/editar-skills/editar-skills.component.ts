@@ -19,6 +19,7 @@ skills:Skills = null;
     const idSkills = this.activatedRouter.snapshot.params['idSkills'];
     this.SkillsService.verIdSkills(idSkills).subscribe(data => {
       this.skills = data;
+      this.openPopup();
     },error =>{
       alert("Error al modificar Skills");
       this.router.navigate(['']);
@@ -29,21 +30,33 @@ skills:Skills = null;
   editarskills(){
     const idSkills = this.activatedRouter.snapshot.params['idSkills'];
     this.SkillsService.editarSkills(idSkills,this.skills).subscribe(data =>{
-      this.irASkills();
+      this.irAHome();
     },error =>{
       alert("Error al editar Skills");
-      this.irASkills();
+      this.irAHome();
     }
    )
   }
 
-  irASkills(){
-    this.router.navigate(['/skills']);
+  irAHome() {
+    this.router.navigate(['']);
   }
 
   onSubmit(){
     this.editarskills();
     console.log(this.skills);
   }
+
+  displayStyle = "none";
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    this.irAHome();
+  }
+
 
 }

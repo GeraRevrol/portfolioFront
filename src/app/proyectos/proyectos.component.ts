@@ -42,4 +42,8 @@ proyectos:Proyectos[];
     }
   }
 
+  irAHome() {
+    this.router.navigate(['']);
+  }
+
 }

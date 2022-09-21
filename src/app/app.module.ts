@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { interceptorProvider } from './interceptor-service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -42,6 +43,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     HeaderComponent,
     HomeComponent,
+    EditarPersonaComponent,
     ],
   imports: [
     BrowserModule,

@@ -11,34 +11,40 @@ import { TokenService } from '../token.service';
 })
 export class EducacionComponent implements OnInit {
 
-educacion:Educacion[];
+  educacion: Educacion[];
 
-  constructor(private EducacionService:EducacionService, private router:Router, private tokenService: TokenService) { }
+  constructor(private EducacionService: EducacionService, private router: Router, private tokenService: TokenService) { }
   isLogged = false;
 
   ngOnInit(): void {
     this.getEducacion();
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
   }
-  
-  private getEducacion(){
-    this.EducacionService.verEducacion().subscribe(data =>{
+
+  private getEducacion() {
+    this.EducacionService.verEducacion().subscribe(data => {
       this.educacion = data;
     });
   }
 
-  borrarEducacion(idEducacion?: number){
-    if(idEducacion != undefined){
-      this.EducacionService.borrarEducacion(idEducacion).subscribe( data => {
+  borrarEducacion(idEducacion?: number) {
+    if (idEducacion != undefined) {
+      this.EducacionService.borrarEducacion(idEducacion).subscribe(data => {
         this.getEducacion();
-      },err => {
+        this.irAHome();
+      }, err => {
         alert("No es posible borrar, Revisá si contas con los accesos requeridos")
-       }
+      }
       )
     }
   }
+
+  irAHome() {
+    this.router.navigate(['']);
+  }
+
 }

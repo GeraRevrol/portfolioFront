@@ -14,23 +14,35 @@ export class AgregarExperienciaComponent implements OnInit {
   constructor(private experienciaService:ExperienciaService, private router:Router) { }
 
   ngOnInit(): void {
+    this.openPopup();
   }
 
   postExperiencia() {
     this.experienciaService.agregarExperiencia(this.experiencia).subscribe(data => {
-      this.irAExperiencia();
+      this.irAHome();
       console.log(data);
 
     }, error => console.log(error));
   }
 
-  irAExperiencia(){
-    this.router.navigate(['/experiencia']);
+  irAHome() {
+    this.router.navigate(['']);
   }
 
   onSubmit(){
     console.log(this.experiencia);
     this.postExperiencia();
+  }
+
+  displayStyle = "none";
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    this.irAHome();
   }
 
 }

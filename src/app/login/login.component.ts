@@ -47,11 +47,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.irAPersona();
+    this.irAHome();
   }
 
-  irAPersona(){
-    this.router.navigate(['/persona']);
+  irAHome() {
+    this.router.navigate(['']);
   }
 
 }

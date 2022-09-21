@@ -42,4 +42,8 @@ export class SkillsComponent implements OnInit {
     }
   }
 
+  irAHome() {
+    this.router.navigate(['']);
+  }
+
 }

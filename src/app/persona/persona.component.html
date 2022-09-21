@@ -1,36 +1,17 @@
-<!-- <div class="container" *ngIf="persona">
-  <div class="row">
-    <div class="col s4">
-      <div class="card">
-        <div class="card-image">
-          <img width="300px" src="{{persona[0].urlFoto}}" />
-          <span class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}</span>
-        </div>
-        <div class="card-content">
-          <p>Nombre: {{persona[0].nombre}}</p>
-          <p>Apellido: {{persona[0].apellido}}</p>
-          <p>Domicilio: {{persona[0].domicilio}}</p>
-          <p>Fecha de Nacimiento: {{persona[0].fechaNac}}</p>
-          <p>Telefono: {{persona[0].telefono}}</p>
-          <p>Correo: {{persona[0].correo}}</p>
-          <p>Sobre mi: {{persona[0].sobreMi}}</p>
-          <p>Descripcion: {{persona[0].descripcion}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <!-- <div class="container-fluid d-flex justify-content-center" style="padding-top:200px;">
   <div class="card mb-12 border border-0" style="max-width: 800px; " *ngIf="persona">
     <div class="row g-0">
-      <div class="col-md-4 col-sm-12">
+      <div class="col-md-4 col-sm-12 text-center">
         <img src="{{persona[0].urlFoto}}" class="img-fluid rounded-circle align-center"
           style="background-color: #6727dd;" alt="foto perfil">
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8 col-sm-12">
         <div class="card-body text-center">
-          <h3 class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}</h3>
+          <h3 class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}<button
+              class="btn btn-sm btn-outline-dark" routerLink="/editar-persona/{{persona[0].idPersona}}" *ngIf="isLogged"
+              type="submit" id="modalito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i class="uil uil-edit-alt"></i>
+            </button> </h3>
           <h5 class="card-title">{{persona[0].descripcion}}</h5>
           <p class="card-text">Domicilio: {{persona[0].domicilio}}
             Fecha de Nacimiento: {{persona[0].fechaNac}}

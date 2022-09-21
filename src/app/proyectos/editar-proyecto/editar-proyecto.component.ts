@@ -19,6 +19,7 @@ proyectos:Proyectos = null;
     const idProyectos = this.activatedRouter.snapshot.params['idProyectos'];
     this.proyectosService.verIdProyectos(idProyectos).subscribe(data =>{
      this.proyectos = data;
+     this.openPopup();
     }, error =>{
      alert("Error al modificar proyectos");
      this.router.navigate(['']);
@@ -29,21 +30,32 @@ proyectos:Proyectos = null;
   editarProyectos(){
     const idProyectos = this.activatedRouter.snapshot.params['idProyectos'];
      this.proyectosService.editarProyectos(idProyectos, this.proyectos).subscribe(data =>{
-      this.irAProyectos();
+      this.irAHome();
      },error =>{
       alert("Error al modificar proyectos")
-      this.irAProyectos();
+      this.irAHome();
      }
     )
-  }
-
-  irAProyectos(){
-    this.router.navigate(['/proyectos']);
   }
 
   onSubmit(){
     this.editarProyectos();
     console.log(this.proyectos);
+  }
+
+  irAHome() {
+    this.router.navigate(['']);
+  }
+
+  displayStyle = "none";
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    this.irAHome();
   }
   
 

@@ -10,41 +10,52 @@ import { EducacionService } from '../educacion.service';
 })
 export class EditarEducacionComponent implements OnInit {
 
- educacion:Educacion = null;
+  educacion: Educacion = null;
 
-  constructor(private educacionService:EducacionService,private activatedRouter:ActivatedRoute,
-    private router:Router) { }
+  constructor(private educacionService: EducacionService, private activatedRouter: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     const idEducacion = this.activatedRouter.snapshot.params['idEducacion'];
-    this.educacionService.verIdEducacion(idEducacion).subscribe( data =>{
+    this.educacionService.verIdEducacion(idEducacion).subscribe(data => {
       this.educacion = data;
-      }, error =>{
-        alert("Error al modificar educacion");
-        this.router.navigate(['']);
-      } 
+      this.openPopup();
+    }, error => {
+      alert("Error al modificar educacion");
+      this.router.navigate(['']);
+    }
     )
   }
 
-  editarEducacion(){
-   const idEducacion = this.activatedRouter.snapshot.params['idEducacion'];
+  editarEducacion() {
+    const idEducacion = this.activatedRouter.snapshot.params['idEducacion'];
     this.educacionService.editarEducacion(idEducacion, this.educacion).subscribe(data => {
-      this.irAEducacion();
-      },error =>{
-        alert("Error al editar educacion, Revisá si contas con los accesos requeridos");
-        this.irAEducacion();
-      }
+      this.irAHome();
+    }, error => {
+      alert("Error al editar educacion, Revisá si contas con los accesos requeridos");
+      this.irAHome();
+    }
     )
   }
 
-  irAEducacion(){
-    this.router.navigate(['/educacion']);
+  irAHome() {
+    this.router.navigate(['']);
   }
 
-  onSubmit(){
+  onSubmit() {
     this.editarEducacion();
     console.log(this.educacion);
   }
-  
+
+  displayStyle = "none";
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    this.irAHome();
+  }
 
 }
