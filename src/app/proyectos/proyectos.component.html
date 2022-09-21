@@ -1,3 +1,5 @@
+
+<!-- 
 <div *ngIf="proyectos">
   <div class="col s6 m6">
     <ul class="collection with-header">
@@ -71,4 +73,50 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-</div>
+</div> -->
+
+
+<section class="container-fluid section" *ngIf="proyectos">
+  <!-- SECTION HEADER -->
+  <header class="heather">
+    <div class="header__container">
+      <div>
+        <h2 class="header__title">Proyectos</h2>
+        <div class="header__subline"></div>
+      </div>
+      <div class="btn__wrapper" *ngIf="isLogged" routerLink="/agregar-proyectos">
+        <button class="btn__add">
+          <i class="uil uil-plus"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- SECTION CONTENT -->
+  <div class="content">
+    <div class="cards">
+      <div *ngFor="let proyecto of proyectos">
+        <div class="card__frame">
+          <h3>{{ proyecto.nombre }}</h3>
+          <p>{{ proyecto.descripcion }}</p>
+
+          <div class="btns__group">
+            <button class="btn__url">
+              <a href={{proyecto.url}} target='_blank'>
+                <i class="uil uil-external-link-alt"></i>
+                <span class="btn__txt">Ver proyecto</span>
+              </a>
+            </button>
+            <button class="btn__edit" *ngIf="isLogged" routerLink="/editar-proyectos/{{proyecto.idProyectos}}" type="submit" name="action">
+              <i class="uil uil-pen"></i>
+              <span>Editar</span>
+            </button>
+            <button class="btn__delete" *ngIf="isLogged" (click)="borrarProyectos(proyecto.idProyectos)" type="submit" name="action">
+              <i class="uil uil-trash"></i>
+              <span>Borrar</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

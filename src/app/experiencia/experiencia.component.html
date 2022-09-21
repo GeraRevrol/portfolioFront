@@ -1,4 +1,4 @@
-<div class="container container-fluid" style="padding-top:100px; margin-bottom: 100px;" *ngIf="experiencia">
+<!-- <div class="container container-fluid" style="padding-top:100px; margin-bottom: 100px;" *ngIf="experiencia">
   <div class="row g-0">
     <h1 class="text-center"><i class="uil uil-briefcase-alt"></i> Experiencia
   <button class="btn btn-sm btn-outline-dark" routerLink="/agregar-experiencia"  *ngIf="isLogged" type="submit" name="action">
@@ -15,9 +15,9 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        <!-- division de grupo de tabla -->
+    
         <tr *ngFor="let experiencia of experiencia">
-          <!-- <th scope="row">{{ experiencia.idExperiencia }}</th> -->
+       
           <td>{{ experiencia.cargo }}</td>
           <td>{{ experiencia.institucion }}</td>
           <td>{{ experiencia.anioingreso }}</td>
@@ -32,4 +32,53 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> -->
+
+<section class="container-fluid section" *ngIf="experiencia">
+  <!-- SECTION HEADER -->
+  <header class="heather">
+    <div class="header__container">
+      <div>
+        <h2 class="header__title">Experiencia</h2>
+        <div class="header__subline"></div>
+      </div>
+      <div class="btn__wrapper" *ngIf="isLogged" routerLink="/agregar-experiencia">
+        <button class="btn__add">
+          <i class="uil uil-plus"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- SECTION CONTENT -->
+  <div class="content">
+    <div class="tabs">
+      <div class="row tabs__container">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-pills col-3" orientation="vertical">
+          <ng-container *ngFor="let experiencia of experiencia">
+            <li ngbNavItem={{experiencia.idExperiencia}}>
+              <a ngbNavLink>{{experiencia.cargo}}</a>
+              <ng-template ngbNavContent>
+                <div class="tabs__content">
+                  <h3>{{ experiencia.cargo }}</h3>
+                  <p class="company">{{ experiencia.institucion }}</p>
+                  <p class="dates">{{ experiencia.anioingreso }} - {{ experiencia.anioegreso }}</p>
+                  <div class="btns__group" *ngIf="isLogged">
+                    <button class="btn__edit" routerLink="/editar-experiencia/{{experiencia.idExperiencia}}" type="submit" name="action">
+                      <i class="uil uil-pen"></i>
+                      <span>Editar</span>
+                    </button>
+                    <button class="btn__delete" (click)="borrarExperiencia(experiencia.idExperiencia)" type="submit" name="action">
+                      <i class="uil uil-trash"></i>
+                      <span>Borrar</span>
+                    </button>
+                  </div>
+                </div>
+              </ng-template>
+            </li>
+          </ng-container>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="col-9"></div>
+      </div>
+    </div>
+  </div>
+</section>

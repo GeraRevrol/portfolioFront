@@ -1,4 +1,35 @@
-<div class="container container-fluid" style="padding-top:100px; margin-bottom: 100px;" *ngIf="educacion">
+<!-- <div class="container" *ngIf="educacion">
+  <div class="col s8">
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Educación</h4>
+        <button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-educacion" *ngIf="isLogged" type="submit" name="action">
+          Agregar
+          <i class="material-icons right">send</i>
+        </button>
+      </li>
+      <div *ngFor="let educacion of educacion">
+        <li class="collection-item">Titulo: {{ educacion.titulo }}</li>
+        <li class="collection-item">Institucion: {{ educacion.institucion }}</li>
+        <li class="collection-item">
+          Año de ingreso: {{ educacion.anioingreso }} - Año de egreso:
+          {{ educacion.anioegreso }}
+        </li>
+        <li><br></li>
+        
+        <button class="btn waves-effect waves-light" routerLink="/editar-educacion/{{educacion.idEducacion}}" *ngIf="isLogged" type="submit" name="action">Editar
+          <i class="material-icons right">send</i>
+        </button>
+        <button class="btn waves-effect waves-light" (click)="borrarEducacion(educacion.idEducacion)" *ngIf="isLogged" type="submit" name="action">Borrar
+          <i class="material-icons right">send</i>
+        </button>
+
+      </div>
+    </ul>
+  </div>
+</div> -->
+
+
+<!-- <div class="container container-fluid" style="padding-top:100px; margin-bottom: 100px;" *ngIf="educacion">
   <div class="row g-0">
     <h1 class="text-center"><i class="uil uil-graduation-cap"></i> Educacion
   <button class="btn btn-sm btn-outline-dark" routerLink="/agregar-educacion"  *ngIf="isLogged" type="submit" name="action">
@@ -15,9 +46,9 @@
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        <!-- division de grupo de tabla -->
+        
         <tr *ngFor="let educacion of educacion">
-          <!-- <th scope="row">{{ educacion.idEducacion }}</th> -->
+          
           <td>{{ educacion.titulo }}</td>
           <td>{{ educacion.institucion }}</td>
           <td>{{ educacion.anioingreso }}</td>
@@ -32,4 +63,69 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> -->
+
+
+
+<section class="container-fluid section" *ngIf="educacion">
+  <!-- SECTION HEADER -->
+  <header class="heather">
+    <div class="header__container">
+      <div>
+        <h2 class="header__title">Educación</h2>
+        <div class="header__subline"></div>
+      </div>
+      <div class="btn__wrapper" *ngIf="isLogged" routerLink="/agregar-educacion">
+        <button class="btn__add">
+          <i class="uil uil-plus"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- SECTION CONTENT -->
+  <div class="content">
+    <div class="grid">
+      <div *ngFor="let educacion of educacion">
+        <div class="cardCustom">
+          <div class="cardCustom__frame">
+
+            <div class="icon__wrapper">
+              <div class="icon__background">
+                <i class="uil uil-arrow"></i>
+              </div>
+            </div>
+            
+            <div class="title__wrapper">
+              <p class="title__label">Título</p>
+              <p class="title__text">{{ educacion.titulo }}</p>
+            </div>
+
+
+            <div class="cardCustom__schoolFrame">
+              <div class="cardCustom__schoolWrapper">
+                <p class="cardCustom__school">Institucion: {{ educacion.institucion }}</p>
+              </div>
+            </div>
+
+            <div class="dates__wrapper">
+              <p class="date__from">Desde: {{ educacion.anioingreso }}</p>
+              <p class="date__to">Hasta: {{ educacion.anioegreso }}</p>
+            </div>
+
+            <div class="btns__group" *ngIf="isLogged">
+              <button class="btn__edit" routerLink="/editar-educacion/{{educacion.idEducacion}}" type="submit" name="action">
+                <i class="uil uil-pen"></i>
+                <span>Editar</span>
+              </button>
+              <button class="btn__delete" (click)="borrarEducacion(educacion.idEducacion)" type="submit" name="action">
+                <i class="uil uil-trash"></i>
+                <span>Borrar</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

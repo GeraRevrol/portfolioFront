@@ -22,6 +22,7 @@ import { interceptorProvider } from './interceptor-service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -50,7 +51,8 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [
     interceptorProvider

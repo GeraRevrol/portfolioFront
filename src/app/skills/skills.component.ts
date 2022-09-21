@@ -11,7 +11,7 @@ import { TokenService } from '../token.service';
 })
 export class SkillsComponent implements OnInit {
 
-skills:Skills[];
+  skills: Skills[];
 
   constructor(private SkillsService:SkillsService, private router:Router, private tokenService: TokenService) { }
   isLogged = false;

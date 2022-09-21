@@ -1,4 +1,4 @@
-<div class="container" *ngIf="skills">
+<!-- <div class="container" *ngIf="skills">
     <div class="col s6">
       <ul class="collection with-header">
         <li class="collection-header"><h4>Skills</h4><button style="margin-right:10px" class="btn waves-effect waves-light" routerLink="/agregar-skills" *ngIf="isLogged" type="submit" name="action">Agregar
@@ -18,4 +18,42 @@
         </div>
       </ul>
     </div>
+    </div> -->
+
+
+<section class="container-fluid section" *ngIf="skills">
+    <!-- SECTION HEADER -->
+    <header class="heather">
+      <div class="header__container">
+        <div>
+          <h2 class="header__title">Skills</h2>
+          <div class="header__subline"></div>
+        </div>
+        <div class="btn__wrapper" *ngIf="isLogged" routerLink="/agregar-skills" type="submit" name="action">
+          <button class="btn__add">
+            <i class="uil uil-plus"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- SECTION CONTENT -->
+    <div class="content">
+      <div class="skills">
+        <ul class="skills__container">
+          <li *ngFor="let skill of skills">
+            <div class="skill__frame">
+              <span class="singleSkill">{{skill.habilidades}}</span>
+            </div>
+            <div class="btns__group" *ngIf="isLogged">
+              <button class="btn__edit" routerLink="/editar-skills/{{skill.idSkills}}" type="submit" name="action">
+                <i class="uil uil-pen"></i>
+              </button>
+              <button class="btn__delete" (click)="borrarSkills(skill.idSkills)" type="submit" name="action">
+                <i class="uil uil-trash"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+</section>

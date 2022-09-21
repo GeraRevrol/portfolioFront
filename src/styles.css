@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 .morado{
@@ -6,4 +7,28 @@
     color:white;
     font-weight: 100%;
     
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  border-top: 89px solid #6727dd;
+  background-color:  transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8d8d8d;
+  border-radius: 5px;
+}
+
+p {
+  margin: 0;
 }
