@@ -23,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { EditarPersonaComponent } from './persona/editar-persona/editar-persona.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     HomeComponent,
     EditarPersonaComponent,
+    FooterComponent,
     ],
   imports: [
     BrowserModule,
