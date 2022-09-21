@@ -21,7 +21,7 @@
   </div>
 </div> -->
 
-<div class="container-fluid d-flex justify-content-center" style="padding-top:200px;">
+<!-- <div class="container-fluid d-flex justify-content-center" style="padding-top:200px;">
   <div class="card mb-12 border border-0" style="max-width: 800px; " *ngIf="persona">
     <div class="row g-0">
       <div class="col-md-4 col-sm-12">
@@ -41,4 +41,44 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<section class="container-fluid section" *ngIf="persona">
+  <div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-5 section__picture">
+        <div class="img__container">
+          <img 
+            src="{{persona[0].urlFoto}}" 
+            alt="foto perfil" 
+            class="img-fluid rounded-circle align-center"
+          />
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-7 section__info">
+        <div class="info__container">
+
+          <h1 class="info__name">{{persona[0].nombre}} {{persona[0].apellido}}</h1>
+          <h3 class="info__desc">{{persona[0].sobreMi}}</h3>
+      
+          <div class="info__iconsContainer">
+            <ul class="info__icons">
+              <li placement="bottom" ngbTooltip={{persona[0].domicilio}}>
+                <span class="icon"><i class="uil uil-map-marker"></i></span>
+              </li>
+              <li placement="bottom" ngbTooltip={{persona[0].fechaNac}}>
+                <span class="icon"><i class="uil uil-calender"></i></span>
+              </li>
+              <li placement="bottom" ngbTooltip={{persona[0].telefono}}>
+                <span class="icon"><i class="uil uil-mobile-android"></i></span>
+              </li>
+              <li placement="bottom" ngbTooltip={{persona[0].correo}}>
+                <span class="icon"><i class="uil uil-envelope"></i></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

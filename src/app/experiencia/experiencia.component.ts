@@ -11,7 +11,8 @@ import { TokenService } from '../token.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-experiencia:Experiencia[];
+  experiencia:Experiencia[];
+  activeTab = '1';
 
   constructor(private ExperienciaService:ExperienciaService, private router:Router, private tokenService: TokenService) { }
   isLogged = false;

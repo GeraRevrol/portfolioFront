@@ -21,6 +21,7 @@ import { LoginComponent } from './login/login.component';
 import { interceptorProvider } from './interceptor-service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [
     interceptorProvider
