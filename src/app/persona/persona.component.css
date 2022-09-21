@@ -1,12 +1,3 @@
-/* .img {
-  width: 100px;
-  border: 2px solid black;
-  border-radius: 20px;
-}
-
-.bordeBlob {
-  border-radius: 50px 50px 150px 150px;
-} */
 
 .section {
   margin: 12rem 0 10rem 0;
@@ -115,4 +106,8 @@
 
 .icon i {
   margin: auto;
+}
+
+.dos {
+font-weight: 400;
 }

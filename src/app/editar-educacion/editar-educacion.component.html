@@ -1,37 +1,35 @@
-<app-home></app-home>
-  <div *ngIf="educacion"
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngStyle]="{'display':displayStyle}">
+<app-header></app-header>
+<app-educacion></app-educacion>
+<app-footer></app-footer>
+<div *ngIf="educacion" class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="color: #4a11b6;">
-        <h4 class="modal-title">Editar Educacion</h4>
-        <button type="button" class="btn-close" 
-                (click)="closePopup()"></button>
+      <div class="modal-header morado fw-semibold fs-4 py-3 d-inline-flex flex-row justify-content-between">
+        <i class="uil uil-pen"></i> Editar Educacion
+        <button type="button" class="morado border-0" (click)="closePopup()"><i
+            class="uil uil-times-square"></i></button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)= "onSubmit()">
+        <form (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label class="form-label">Titulo</label>
-            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0 w-50" id="titulo" [(ngModel)] = "educacion.titulo"
-            name = "titulo">
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0 w-50"
+              id="titulo" [(ngModel)]="educacion.titulo" name="titulo">
           </div>
           <div class="mb-3">
             <label class="form-label">Institucion</label>
-            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="institucion" [(ngModel)] = "educacion.institucion"
-            name = "institucion">
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="institucion" [(ngModel)]="educacion.institucion" name="institucion">
           </div>
           <div class="mb-3">
             <label class="form-label">Año Ingreso</label>
-            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="anioingreso" [(ngModel)] = "educacion.anioingreso"
-            name = "anioingreso">
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="anioingreso" [(ngModel)]="educacion.anioingreso" name="anioingreso">
           </div>
           <div class="mb-3">
             <label class="form-label">Año Egreso</label>
-            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="anioegreso" [(ngModel)] = "educacion.anioegreso"
-            name = "anioegreso">
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="anioegreso"
+              [(ngModel)]="educacion.anioegreso" name="anioegreso">
           </div>
           <button type="submit" class="btn morado" data-bs-dismiss="modal">Submit</button>
         </form>

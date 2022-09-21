@@ -1,39 +1,9 @@
-<!-- <div class="container-fluid d-flex justify-content-center" style="padding-top:200px;">
-  <div class="card mb-12 border border-0" style="max-width: 800px; " *ngIf="persona">
-    <div class="row g-0">
-      <div class="col-md-4 col-sm-12 text-center">
-        <img src="{{persona[0].urlFoto}}" class="img-fluid rounded-circle align-center"
-          style="background-color: #6727dd;" alt="foto perfil">
-      </div>
-      <div class="col-md-8 col-sm-12">
-        <div class="card-body text-center">
-          <h3 class="card-title">{{persona[0].nombre}} {{persona[0].apellido}}<button
-              class="btn btn-sm btn-outline-dark" routerLink="/editar-persona/{{persona[0].idPersona}}" *ngIf="isLogged"
-              type="submit" id="modalito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              <i class="uil uil-edit-alt"></i>
-            </button> </h3>
-          <h5 class="card-title">{{persona[0].descripcion}}</h5>
-          <p class="card-text">Domicilio: {{persona[0].domicilio}}
-            Fecha de Nacimiento: {{persona[0].fechaNac}}
-            Telefono: {{persona[0].telefono}}
-            Correo: {{persona[0].correo}}
-            Sobre mi: {{persona[0].sobreMi}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <section class="container-fluid section" *ngIf="persona">
   <div>
     <div class="row">
       <div class="col-xs-12 col-lg-5 section__picture">
         <div class="img__container">
-          <img 
-            src="{{persona[0].urlFoto}}" 
-            alt="foto perfil" 
-            class="img-fluid rounded-circle align-center"
-          />
+          <img src="{{persona[0].urlFoto}}" alt="foto perfil" class="img-fluid rounded-circle align-center" />
         </div>
       </div>
       <div class="col-xs-12 col-lg-7 section__info">
@@ -42,20 +12,15 @@
           <div class="info__nameContainer">
             <h1 class="info__name">{{persona[0].nombre}} {{persona[0].apellido}}</h1>
 
-            <div 
-              class="btn__wrapper" 
-              *ngIf="isLogged" routerLink="/editar-persona/{{persona[0].idPersona}}" 
-              id="modalito" 
-              data-bs-toggle="modal" 
-              data-bs-target="#staticBackdrop"
-            >
+            <div class="btn__wrapper" *ngIf="isLogged" routerLink="/editar-persona/{{persona[0].idPersona}}"
+              id="modalito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               <button class="btn__add">
                 <i class="uil uil-plus"></i>
               </button>
             </div>
           </div>
-          <h3 class="info__desc">{{persona[0].sobreMi}}</h3>
-      
+          <h4 class="info__desc">{{persona[0].descripcion}}</h4>
+          <h6 class="info__desc dos">{{persona[0].sobreMi}}</h6>
           <div class="info__iconsContainer">
             <ul class="info__icons">
               <li placement="bottom" ngbTooltip={{persona[0].domicilio}}>

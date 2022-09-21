@@ -1,10 +1,13 @@
-<app-home></app-home>
+<app-header></app-header>
+<app-proyectos></app-proyectos>
+<app-footer></app-footer>
 <div *ngIf="proyectos" class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header" style="color: #4a11b6;">
-                <h4 class="modal-title">Editar proyecto</h4>
-                <button type="button" class="btn-close" (click)="closePopup()"></button>
+            <div class="modal-header morado fw-semibold fs-4 py-3 d-inline-flex flex-row justify-content-between">
+                <i class="uil uil-pen"></i> Editar Proyecto
+                <button type="button" class="morado border-0" (click)="closePopup()"><i
+                        class="uil uil-times-square"></i></button>
             </div>
             <div class="modal-body">
                 <form (ngSubmit)="onSubmit()">

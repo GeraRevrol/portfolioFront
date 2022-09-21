@@ -1,34 +1,60 @@
 <app-home></app-home>
-  <div *ngIf="persona"
-  class="modal"
-  tabindex="-1"
-  role="dialog"
-  [ngStyle]="{'display':displayStyle}">
+<div *ngIf="persona" class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="color: #4a11b6;">
-        <h4 class="modal-title">Editar Persona</h4>
-        <button type="button" class="btn-close" 
-                (click)="closePopup()"></button>
+      <div class="modal-header morado fw-semibold fs-4 py-3 d-inline-flex flex-row justify-content-between">
+        <i class="uil uil-pen"></i> Editar Persona
+        <button type="button" class="morado border-0" (click)="closePopup()"><i
+            class="uil uil-times-square"></i></button>
       </div>
       <div class="modal-body">
-        <form (ngSubmit)= "onSubmit()">
+        <form (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label class="form-label">Nombre</label>
-            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0 w-50" id="nombre" [(ngModel)] = "persona.nombre"
-            name = "nombre">
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0 w-50"
+              id="nombre" [(ngModel)]="persona.nombre" name="nombre">
           </div>
           <div class="mb-3">
-            <label class="form-label">Descripcion</label>
-            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="descripcion" [(ngModel)] = "persona.descripcion"
-            name = "descripcion">
+            <label class="form-label">Apellido</label>
+            <input type="text" class="form-control form-control border border-0 border-bottom rounded-0" id="apellido"
+              [(ngModel)]="persona.apellido" name="apellido">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Domicilio</label>
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="domicilio" [(ngModel)]="persona.domicilio" name="domicilio">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Fecha de Nacimiento</label>
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="fechaNac" [(ngModel)]="persona.fechaNac" name="fechaNac">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">telefono</label>
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="telefono" [(ngModel)]="persona.telefono" name="telefono">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0" id="correo"
+              [(ngModel)]="persona.correo" name="correo">
           </div>
           <div class="mb-3">
             <label class="form-label">Sobre Mi</label>
-            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0" id="sobreMi" [(ngModel)] = "persona.sobreMi"
-            name = "sobreMi">
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="sobreMi" [(ngModel)]="persona.sobreMi" name="sobreMi">
           </div>
-          <button type="submit" class="btn morado" data-bs-dismiss="modal">Submit</button>
+          <div class="mb-3">
+            <label class="form-label">Url de Foto</label>
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="urlFoto" [(ngModel)]="persona.urlFoto" name="urlFoto">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Descripcion</label>
+            <input type="textarea" class="form-control form-control border border-0 border-bottom rounded-0"
+              id="descripcion" [(ngModel)]="persona.descripcion" name="descripcion">
+          </div>
+          <button type="submit" class="btn morado text-center" data-bs-dismiss="modal">Submit</button>
         </form>
       </div>
     </div>
