@@ -39,7 +39,21 @@
       <div class="col-xs-12 col-lg-7 section__info">
         <div class="info__container">
 
-          <h1 class="info__name">{{persona[0].nombre}} {{persona[0].apellido}}</h1>
+          <div class="info__nameContainer">
+            <h1 class="info__name">{{persona[0].nombre}} {{persona[0].apellido}}</h1>
+
+            <div 
+              class="btn__wrapper" 
+              *ngIf="isLogged" routerLink="/editar-persona/{{persona[0].idPersona}}" 
+              id="modalito" 
+              data-bs-toggle="modal" 
+              data-bs-target="#staticBackdrop"
+            >
+              <button class="btn__add">
+                <i class="uil uil-plus"></i>
+              </button>
+            </div>
+          </div>
           <h3 class="info__desc">{{persona[0].sobreMi}}</h3>
       
           <div class="info__iconsContainer">
