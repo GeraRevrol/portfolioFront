@@ -9,7 +9,7 @@ import { Skills } from './skills';
 export class SkillsService {
 
   //url para ver las skills
-  private skiURL = "http://localhost:9090/skills";
+  private skiURL = "https://backendportfoliogera.herokuapp.com/skills";
 
 
   constructor(private httpClient : HttpClient) { }

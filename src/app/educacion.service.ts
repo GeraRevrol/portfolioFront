@@ -9,7 +9,7 @@ import { Educacion } from './educacion';
 export class EducacionService {
 
   //url para ver la educacion
-  private eduURL = "http://localhost:9090/educacion";
+  private eduURL = "https://backendportfoliogera.herokuapp.com/educacion";
  
 
   constructor(private httpClient : HttpClient) { }

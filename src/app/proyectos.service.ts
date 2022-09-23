@@ -9,7 +9,7 @@ import { Proyectos } from './proyectos';
 export class ProyectosService {
 
   //url para ver los proyectos
-  private proURL = "http://localhost:9090/proyectos";
+  private proURL = "https://backendportfoliogera.herokuapp.com/proyectos";
 
 
   constructor(private httpClient : HttpClient) { }

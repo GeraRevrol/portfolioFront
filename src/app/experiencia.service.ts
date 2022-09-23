@@ -10,7 +10,7 @@ export class ExperienciaService {
 
 
   // Url para ver la experiencia
-  private expURL = "http://localhost:9090/experiencia";
+  private expURL = "https://backendportfoliogera.herokuapp.com/experiencia";
 
   constructor(private httpClient : HttpClient) { }
 
