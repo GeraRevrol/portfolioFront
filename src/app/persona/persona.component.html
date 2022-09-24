@@ -12,8 +12,7 @@
           <div class="info__nameContainer">
             <h1 class="info__name">{{persona[0].nombre}} {{persona[0].apellido}}</h1>
 
-            <div class="btn__wrapper" *ngIf="isLogged" routerLink="/editar-persona/{{persona[0].idPersona}}"
-              id="modalito" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <div class="btn__wrapper" *ngIf="isLogged" routerLink="/editar-persona/{{persona[0].idPersona}}">
               <button class="btn__add">
                 <i class="uil uil-pen"></i>
               </button>
