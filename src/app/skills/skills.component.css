@@ -65,6 +65,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .skills__container li {
@@ -75,7 +76,7 @@
   background-color: rgb(167, 167, 167);
   color: #fff;
   font-size: .9rem;
-  margin: 0 1rem;
+  margin:.5rem 1rem .5rem;
   padding: .5rem .7rem;
   border-radius: .5rem;
   display: flex;
@@ -85,7 +86,7 @@
 }
 
 .btns__group {
-  margin-top: 1rem;
+  margin-top: 1rem 0;
   display: flex;
   justify-content: center;
   align-items: center;

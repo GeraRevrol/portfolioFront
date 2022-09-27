@@ -29,6 +29,7 @@
 
 .info__nameContainer {
   display: flex;
+  justify-content: center;
 }
 
 .btn__wrapper {
